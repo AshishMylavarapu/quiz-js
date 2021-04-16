@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <title>Question-3</title>
+    <script>
+        function register() {
+            var getSelectedValue = document.querySelector('input[name="ans"]:checked');
+            if (getSelectedValue != null) {
+                var crt = localStorage.getItem("correct");
+                var t = localStorage.getItem("total");
+                var crct = Number(crt);
+                var tot = Number(t);
+                var x = document.getElementById("24").checked;
+                if (x) {
+                    crct++;
+                    tot++;
+                }
+                else {
+                    tot++;
+                }
+                if (localStorage) {
+                    localStorage.setItem("correct", crct);
+                    localStorage.setItem("total", tot);
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-8 border border-dark border-4" style="background-color: #addde9;">
+                <h1>Q3. What is 4!?</h1>
+
+                <form action="q4.html" style="font-size: 30px;">
+                    
+                    <input type="radio" name="ans" id="24" value="24" required><label for="24">24</label><br>
+                    
+                    <input type="radio" name="ans" id="4" value="4"><label for="4">4</label><br>
+                    
+                    <input type="radio" name="ans" id="6" value="6"><label for="6">6</label><br><br>
+                    <input type="submit" value="Next question" onclick="register()">
+                </form>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+    </div>
+</body>
+
+</html>
